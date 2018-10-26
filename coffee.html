@@ -55,28 +55,38 @@
   <script>
 
     // Set these variables to their DOM elements
-    // set attribute to the image
-    const coffeeImage = document.querySelector('#coffee-image');
+   
+    //const coffeeImage = document.querySelector('#coffee-image');
+    //JQuery:
+    const coffeeImage = $('#coffee-image');
+
 
     function coffeeBeans(){
-      coffeeImage.setAttribute('src', 'static/coffee_beans.jpg'); 
+      //coffeeImage.setAttribute('src', 'static/coffee_beans.jpg'); 
+      // JQ
+      coffeeImage.attr('src', 'static/coffee_beans.jpg');
     }
 
-    function coffeeMug(){
-      coffeeImage.setAttribute('src', 'static/coffee_mug.jpg'); 
+     function coffeeMug(){
+      //coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+       coffeeImage.attr('src', 'static/coffee_mug.jpg');
     }
 
 
     function coffeeMachine(){
-      coffeeImage.setAttribute('src', 'static/coffee_machine.jpg'); 
+      //coffeeImage.setAttribute('src', 'static/coffee_machine.jpg'); 
+      coffeeImage.attr('src', 'static/coffee_machine.jpg');
       setTimeout(coffeeMug, 1500);
       setTimeout(coffeeBeans, 2500);
     }
     
     //User clicks, and beans image should become a coffee machine.
     coffeeBeans();
-    coffeeImage.addEventListener('click',coffeeMachine);
-    
+    // JS:
+    // coffeeImage.addEventListener('click',coffeeMachine);
+   
+    // JQuery:
+    coffeeImage.on('click',coffeeMachine); 
     
    
 
